@@ -1,0 +1,24 @@
+{
+  "name": "express-crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manisaparajuli/express-crud-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manisaparajuli/express-crud-api/issues"
+  },
+  "homepage": "https://github.com/manisaparajuli/express-crud-api#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
