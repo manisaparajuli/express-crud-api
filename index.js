@@ -48,12 +48,10 @@ app.get('/api/product/:id', async(req, res) => {
 
 //update a product
 app.put('/api/product/:id', async(req, res) => {
-
   try{
     const {id} = req.params
     const product = await Product.findByIdAndUpdate(id, req.body);
     if(!product) throw new Error(`Cannot find any product related to ${id} `)
-    
     const updatedProduct = await Product.findById(id)
     res.status(200).json(updatedProduct);
   }
@@ -62,6 +60,17 @@ app.put('/api/product/:id', async(req, res) => {
     res.status(500).json({message: err.message})
   }
 
+})
+
+app.delete('/api/product/:id', async(req, res) => {
+  try{
+    const {id} = req.params;
+    const product = await Product.findByIdAndDelete(id);
+    if(!product) throw new Error("Product not found")
+    res.status(200).json({message: "Product deleted successfully."})
+  }catch(err){
+    res.status(500).json({message: err.message})
+  }
 })
 
 
